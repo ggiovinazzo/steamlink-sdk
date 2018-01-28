@@ -41,9 +41,11 @@ popd
 # Install it
 #
 export DESTDIR="${BUILD}/steamlink/apps/retroarch"
+export USBMOUNT="${BUILD}/steamlink/overlay/etc/init.d/startup"
 
 # Copy the files to the app directory
 mkdir -p "${DESTDIR}"
+mkdir -p "${USBMOUNT}"
 mkdir -p "${DESTDIR}/roms"
 mkdir -p "${DESTDIR}/extra"
 mkdir -p "${DESTDIR}/.home/.config/retroarch"
@@ -51,6 +53,7 @@ mkdir -p "${DESTDIR}/.home/.config/retroarch"
 cp -v "${SRC}/retroarch" "${DESTDIR}"
 $STRIP "${DESTDIR}/retroarch"
 cp -v "${TOP}/retroarch.cfg" "${DESTDIR}/.home/.config/retroarch/retroarch.cfg"
+cp -v "${TOP}/S19mnt_usbdsk.sh" "${USBMOUNT}/S19mnt_usbdsk.sh"
 
 # You can add some roms for testing
 if [ -d "roms" ]; then

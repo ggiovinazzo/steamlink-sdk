@@ -36,7 +36,7 @@ memcard=memcard
 sta=sta
 artwork=artwork
 cheat=.
-rompath=roms
+rompath=/mnt/disk/retroarch/roms/mame
 samplepath=samples
 
 [frontend]
